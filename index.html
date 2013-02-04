@@ -1,6 +1,7 @@
 <!--http://epicfaace.netii.net/ajaxtest/custom.php?url=1VHHKLdxNkF_uJa1y2cD5mXnSTpvw-LBGdZ6mKGRvYDg&export=txt-->
 <!--http://docs.mathjax.org/en/latest/configuration.html#loading-cdn-->
 <!--http://docs.mathjax.org/en/v1.1-latest/start.html#tex-and-latex-input-->
+<!--Using mathjax, maybe pgfplots-->
 <!DOCTYPE html>
 
 <html>
@@ -11,27 +12,32 @@
     "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
     type="text/javascript"></script>
     <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-    });
+		MathJax.Hub.Config({
+		    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		    });
     </script>
     <style>
-@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+	@import url("http://fonts.googleapis.com/css?family=Open+Sans");
     body
     {
-    font-family:'open sans';
-    height:99%;
+	    font-family:'open sans';
+	    height:99%;
     }
     div.topic
     {
-    width:40%;
-    border:1px solid black;
-    padding:8px;
-    margin:5px;
+	    width:40%;
+	    border:1px solid black;
+	    padding:8px;
+	    margin:5px;
+	    float:left;
     }
-    h3
+    h3,h5
     {
-    color:gray;
+    	color:#585858;
+    }
+    h4,h6
+    {
+    	font-style: italic;
     }
     </style>
 
@@ -49,14 +55,62 @@ $$\int_a^b f'(x)\,dx$$
         <h1>Calculus</h1>
 
         <div id="integrals">
-            <h3>Indefinite</h3>
-            Indefinite integral is the antiderivative:<br>
-            $$\int f'(x)\,dx=f(x)+C$$
-            <br>C is a constant, since $\frac{d}{dx}f(x)=\frac{d}{dx}(f(x)+C)$<br>
-            <h4>Properties:</h4>
-            $$\int f(x)+g(x)\,dx=\int f(x)\,dx+\int g(x)\,dx$$
-            $$\int ax^b\,dx=\frac{a}{b+1}a^{b+1}$$
+        	<h2>Integrals</h2>
+        	<div>
+	            <h3>Indefinite</h3>
+	            Indefinite integral is the antiderivative:<br>
+	            $$\int f'(x)\,dx=f(x)+C$$
+	            <br>C is a constant, since $\frac{d}{dx}f(x)=\frac{d}{dx}(f(x)+C)$<br>
+	            <h4>Properties:</h4>
+	            Assuming a and b are constants:
+	            $$\int f(x)+g(x)\,dx=\int f(x)\,dx+\int g(x)\,dx$$
+	            $$\int ax^b\,dx=\frac{a}{b+1}a^{b+1}$$
+	            $$\int b\,dx=\int b^{0}\,dx=bx$$
+        	</div>
         </div>
+    </div>
+    <div class="topic" id="matrices">
+    	<!--
+		$$\left[ \begin{array}{ccc}
+		a & b & c \\
+		d & e & f \\
+		g & h & i \end{array} \right]$$
+		{ccc} is alignment of each column; can be l, r, or c each.
+		$$\left[ \begin{array}{cc}a & b \\c & d \end{array} \right]$$
+    -->
+    	<h1>Matrices</h1>
+    	<div>
+    		<div>
+    			This is a 3x2 matrix. Columns by rows; counterintuitive!
+    			$$\underbrace{\left[ \begin{array}{ccc}a & b \\c & d \\ e& f \end{array} \right]}_\textrm{2 columns}\textrm{3 rows}$$
+    			Matrices are denoted by capital letters, like $A$.
+    		</div>
+    		<h2>Basic operations</h2>
+    		<div>
+    			<h3>Addition</h3>
+    			This applies to any dimensions, and applies to subtraction, too.
+				$$\left[ \begin{array}{cc}a & b \\c & d \end{array} \right]
+				+\left[ \begin{array}{cc}e & f \\g & h \end{array} \right]=
+				\left[ \begin{array}{cc}a+e & b+f \\c+g & d+h \end{array} \right]$$
+				However, for addition, both matrices must have the same dimensions.
+				$$\left[ \begin{array}{cc}a & b \\c & d \end{array} \right]
+				+\left[ \begin{array}{c}a & b \end{array} \right]=\textrm{undefined}$$
+				<h3>Multiplication</h3>
+				Multiplying a matrix by a scalar is very easy.
+				$$x\left[ \begin{array}{cc}a & b \\c & d \end{array} \right]
+				=\left[ \begin{array}{cc}xa & xb \\xc & xd \end{array} \right]$$
+				Multiplying a matrix by a matrix is a bit more complicated.
+				$$\left[ \begin{array}{cc}a & b \\c & d \end{array} \right]
+				\left[ \begin{array}{cc}e & f \\g & h \end{array} \right]=
+				\left[ \begin{array}{cc}ae+bg & af+bh \\ce+dg & cf+dh \end{array} \right]
+				$$
+				If matrix A has dimensions $a*b$ and matrix B has dimensions $c*d$,  matrix AB is defined iff $b==c$ and has dimensions $a*d$.
+    		</div>
+    		<h2>Determinant</h2>
+    		<div>
+    			The determinant of $A$ is denoted as $\textrm{det}(A)$ or $|A|$<br>
+    			A matrix can have a determinant iff its dimensions are $n*n$ (It has the same number of rows and columns)
+    		</div>
     </div>
 </body>
 </html>
