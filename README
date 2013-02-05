@@ -6,3 +6,36 @@ Collection of math stuff
 http://htmlpreview.github.com/?https://github.com/epicfaace/math/blob/master/index.html
 
 Using mathjax, maybe pgfplots
+
+http://www.ling.ohio-state.edu/~jonsafari/latex/
+
+http://docs.mathjax.org/en/latest/tex.html
+
+#CANCEL ext.:
+
+\cancel{math}
+Strikeout math from lower left to upper right.
+
+\bcancel{math}
+Strikeout math from upper left to lower right.
+
+\xcancel{math}
+Strikeout math with an “X”.
+
+\cancelto{value}{math}
+Strikeout math with an arrow going to value.
+
+#ENCLOSE:
+\enclose{type}{math}
+https://developer.mozilla.org/en-US/docs/MathML/Element/menclose
+
+#UNDERBRACE:
+\underbrace{math}_{text}
+
+#TEXT:
+\textrm{2 columns}
+\textrm{det}
+
+#OPERATORS:
+\neq
+http://w2.syronex.com/jmr/tex/latex-symbols
