@@ -49,8 +49,8 @@
     <script>
         $(function() {
             $("div.topic").attr("data-open","false");
-            $("div.topic div.content").hide();
-            $("div.topic h1").click(function() {
+            $("div.topic div.content, div.content div").hide();
+            $("div h1").click(function() {
                 $(this).siblings("div.content").slideToggle();
                 if ($(this).parent().attr("data-open")==="true") {
                     $(this).parent().attr("data-open","false");
@@ -68,6 +68,9 @@
                     //$("div.topic").insertAfter($(this).parent());
                 }
             });
+            $("h2").click(function() {
+                $(this).next("div").first().slideToggle();
+            });
         });
     </script>
 </head>
@@ -82,20 +85,18 @@ $$\int_a^b f'(x)\,dx$$
     <div class="topic" id="calculus">
         <h1>Calculus</h1>
         <div class="content">
-            <div id="integrals">
-            	<h2>Integrals</h2>
-            	<div>
-    	            <h3>Indefinite</h3>
-    	            Indefinite integral is the antiderivative:<br>
-    	            $$\int f'(x)\,dx=f(x)+C$$
-    	            <br>C is a constant, since $\frac{d}{dx}f(x)=\frac{d}{dx}(f(x)+C)$<br>
-    	            <h4>Properties:</h4>
-    	            Assuming a and b are constants:
-    	            $$\int f(x)+g(x)\,dx=\int f(x)\,dx+\int g(x)\,dx$$
-    	            $$\int ax^b\,dx=\frac{a}{b+1}a^{b+1}$$
-    	            $$\int b\,dx=\int b^{0}\,dx=bx$$
-            	</div>
-            </div>
+        	<h2>Integrals</h2>
+        	<div>
+                <h3>Indefinite</h3>
+                Indefinite integral is the antiderivative:<br>
+                $$\int f'(x)\,dx=f(x)+C$$
+                <br>C is a constant, since $\frac{d}{dx}f(x)=\frac{d}{dx}(f(x)+C)$<br>
+                <h4>Properties:</h4>
+                Assuming a and b are constants:
+                $$\int f(x)+g(x)\,dx=\int f(x)\,dx+\int g(x)\,dx$$
+                $$\int ax^b\,dx=\frac{a}{b+1}a^{b+1}$$
+                $$\int b\,dx=\int b^{0}\,dx=bx$$
+        	</div>
         </div>
     </div>
     <div class="topic" id="matrices">
